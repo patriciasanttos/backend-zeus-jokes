@@ -23,7 +23,6 @@ http://localhost:3000/user/fetch
 
 ###
 POST https://backend-zeus-jokes.vercel.app/user/auth
-
 content-type: application/json
 
 {
@@ -33,10 +32,9 @@ content-type: application/json
 
 ###
 POST https://backend-zeus-jokes.vercel.app/user/create
-
 content-type: application/json
 
 {
-    "email": "teste10@hotmail.com",
+    "email": "teste100@hotmail.com",
     "password": "adm123"
 }
