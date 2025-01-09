@@ -5,7 +5,7 @@ POST http://localhost:3000/user/create
 content-type: application/json
 
 {
-    "email": "teste777@hotmail.com",
+    "email": "teste8@hotmail.com",
     "password": "adm123"
 }
 
@@ -14,9 +14,29 @@ POST http://localhost:3000/user/auth
 content-type: application/json
 
 {
-    "email": "teste777@hotmail.com",
+    "email": "teste8@hotmail.com",
     "password": "adm123"
 }
 
 ###
 http://localhost:3000/user/fetch
+
+###
+POST https://backend-zeus-jokes.vercel.app/user/auth
+
+content-type: application/json
+
+{
+    "email": "teste8@hotmail.com",
+    "password": "adm123"
+}
+
+###
+POST https://backend-zeus-jokes.vercel.app/user/create
+
+content-type: application/json
+
+{
+    "email": "teste10@hotmail.com",
+    "password": "adm123"
+}

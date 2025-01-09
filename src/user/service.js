@@ -8,6 +8,7 @@ const fetchService = async () => {
   return user;
 };
 const createService = async (body) => {
+  console.log(body)
   const user = await User.create(body);
   return user;
 };
