@@ -2,17 +2,23 @@ import User from "../database/schema/User.js";
 
 const fetchService = async () => {
   const user = await User.create({
-    email: "teste7@hotmail.com",
+    email: "teste33344444@gmail.com",
     password: "123",
   });
+
   return user;
 };
+
 const createService = async (body) => {
-  console.log(body)
+  console.log("createService", body);
+
   const user = await User.create(body);
   return user;
 };
+
 const authService = async (body) => {
+  console.log("authService", body);
+
   if (!body.email) {
     return { error: true, message: "Dados faltantes", statusCode: 400 };
   }
@@ -26,7 +32,7 @@ const authService = async (body) => {
     return { error: true, message: "Dados inválidos", statusCode: 400 };
   }
 
-  return user;
+  return { user, message: "Login bem sucedido" };
 };
 
 export { fetchService, createService, authService };

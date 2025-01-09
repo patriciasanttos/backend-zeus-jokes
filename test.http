@@ -5,7 +5,7 @@ POST http://localhost:3000/user/create
 content-type: application/json
 
 {
-    "email": "teste8@hotmail.com",
+    "email": "teste80@hotmail.com",
     "password": "adm123"
 }
 

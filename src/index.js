@@ -1,36 +1,33 @@
-import express from "express"
-import cors from "cors"
-import {piadas} from "./mock.js"
-import { connectToMongo } from "./database/index.js"
-import { userRouter } from "./router.js"
+import express from "express";
+import cors from "cors";
+import { piadas } from "./mock.js";
+import { connectToMongo } from "./database/index.js";
+import { userRouter } from "./router.js";
 
-const app = express()
-connectToMongo()
-
+const app = express();
+connectToMongo();
 app.use(
-  cors(
-    {
-      exposeHeaders: ["X-Total-Count"]
-    }
-  )
-)
-app.use(express.json())
+  cors({
+    exposedHeaders: ["X-Total-Count"],
+  })
+);
+app.use(express.json());
 
-function getRandomIt(max) {
-  return Math.floor(Math.random() * max)
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 app.get("/batata", (request, response) => {
-  return response.status(200).send({batata: true})
-})
+  return response.status(200).send({ batata: true });
+});
 
 app.get("/piadas", (request, response) => {
-  const randomNum = getRandomIt(piadas.length)
-  return response.status(200).send({piada: piadas[randomNum]})
-})
+  const randomNum = getRandomInt(piadas.length);
+  return response.status(200).send({ piada: piadas[randomNum] });
+});
 
-app.use("/user", userRouter)
+app.use("/user", userRouter);
 
-app.listen("3000")
+app.listen("3000");
 
-export default app
+export default app;
