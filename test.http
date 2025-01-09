@@ -1,0 +1,22 @@
+http://localhost:3000/piadas
+
+###
+POST http://localhost:3000/user/create
+content-type: application/json
+
+{
+    "email": "teste777@hotmail.com",
+    "password": "adm123"
+}
+
+###
+POST http://localhost:3000/user/auth
+content-type: application/json
+
+{
+    "email": "teste777@hotmail.com",
+    "password": "adm123"
+}
+
+###
+http://localhost:3000/user/fetch

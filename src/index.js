@@ -1,8 +1,12 @@
 import express from "express"
 import cors from "cors"
 import {piadas} from "./mock.js"
+import { connectToMongo } from "./database/index.js"
+import { userRouter } from "./router.js"
 
 const app = express()
+connectToMongo()
+
 app.use(
   cors(
     {
@@ -24,6 +28,8 @@ app.get("/piadas", (request, response) => {
   const randomNum = getRandomIt(piadas.length)
   return response.status(200).send({piada: piadas[randomNum]})
 })
+
+app.use("/user", userRouter)
 
 app.listen("3000")
 
